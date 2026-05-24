@@ -15,10 +15,13 @@ function NotFoundComponent() {
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
         <h1 className="text-7xl font-bold text-foreground">404</h1>
-        <h2 className="mt-4 text-xl font-semibold text-foreground">Page not found</h2>
+        <h2 className="mt-4 text-xl font-semibold text-foreground">
+          Page not found
+        </h2>
         <p className="mt-2 text-sm text-muted-foreground">
           The page you're looking for doesn't exist or has been moved.
         </p>
+
         <div className="mt-6">
           <Link
             to="/"
@@ -32,8 +35,15 @@ function NotFoundComponent() {
   );
 }
 
-function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
+function ErrorComponent({
+  error,
+  reset,
+}: {
+  error: Error;
+  reset: () => void;
+}) {
   console.error(error);
+
   const router = useRouter();
 
   return (
@@ -42,9 +52,12 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         <h1 className="text-xl font-semibold tracking-tight text-foreground">
           This page didn't load
         </h1>
+
         <p className="mt-2 text-sm text-muted-foreground">
-          Something went wrong on our end. You can try refreshing or head back home.
+          Something went wrong on our end. You can try refreshing or head back
+          home.
         </p>
+
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
             onClick={() => {
@@ -55,6 +68,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
           >
             Try again
           </button>
+
           <a
             href="/"
             className="inline-flex items-center justify-center rounded-md border border-input bg-background px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-accent"
@@ -67,35 +81,148 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   );
 }
 
-export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()({
-  head: () => ({
-    meta: [
-      { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
-    ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-        rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
-      },
-    ],
-  }),
-  shellComponent: RootShell,
-  component: RootComponent,
-  notFoundComponent: NotFoundComponent,
-  errorComponent: ErrorComponent,
-});
+export const Route =
+  createRootRouteWithContext<{ queryClient: QueryClient }>()({
+    head: () => ({
+      meta: [
+        // Basic SEO
+        { charSet: "utf-8" },
+        {
+          name: "viewport",
+          content: "width=device-width, initial-scale=1",
+        },
+
+        {
+          title: "Devfolio — Senior Frontend Developer Portfolio",
+        },
+
+        {
+          name: "description",
+          content:
+            "Senior Frontend Developer specializing in React, Next.js, TypeScript, GSAP, and modern UI experiences.",
+        },
+
+        {
+          name: "keywords",
+          content:
+            "Frontend Developer, React Developer, Next.js, TypeScript, JavaScript, GSAP, Tailwind CSS, UI Developer, Portfolio, Web Developer",
+        },
+
+        {
+          name: "author",
+          content: "Aniket Verma",
+        },
+
+        {
+          name: "robots",
+          content: "index, follow",
+        },
+
+        // Open Graph / Facebook
+        {
+          property: "og:title",
+          content: "Devfolio — Senior Frontend Developer Portfolio",
+        },
+
+        {
+          property: "og:description",
+          content:
+            "Modern frontend portfolio showcasing React, Next.js and TypeScript projects.",
+        },
+
+        {
+          property: "og:type",
+          content: "website",
+        },
+
+        {
+          property: "og:url",
+          content:
+            "https://elevated-frontend.aniketverma4229.workers.dev",
+        },
+
+        {
+          property: "og:image",
+          content:
+            "https://elevated-frontend.aniketverma4229.workers.dev/og-image.png",
+        },
+
+        // Twitter
+        {
+          name: "twitter:card",
+          content: "summary_large_image",
+        },
+
+        {
+          name: "twitter:title",
+          content: "Devfolio — Senior Frontend Developer Portfolio",
+        },
+
+        {
+          name: "twitter:description",
+          content:
+            "Frontend Developer crafting modern web experiences with React & Next.js.",
+        },
+
+        {
+          name: "twitter:image",
+          content:
+            "https://elevated-frontend.aniketverma4229.workers.dev/og-image.png",
+        },
+
+        {
+          name: "twitter:creator",
+          content: "@AniketV64738395",
+        },
+
+        {
+          name: "theme-color",
+          content: "#0B0F19",
+        },
+      ],
+
+      links: [
+        // Main CSS
+        { rel: "stylesheet", href: appCss },
+
+        // Favicon
+        {
+          rel: "icon",
+          type: "image/png",
+          href: "/favicon.png",
+        },
+
+        // Canonical URL
+        {
+          rel: "canonical",
+          href: "https://elevated-frontend.aniketverma4229.workers.dev",
+        },
+
+        // Fonts
+        {
+          rel: "preconnect",
+          href: "https://fonts.googleapis.com",
+        },
+
+        {
+          rel: "preconnect",
+          href: "https://fonts.gstatic.com",
+          crossOrigin: "anonymous",
+        },
+
+        {
+          rel: "stylesheet",
+          href:
+            "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap",
+        },
+      ],
+    }),
+
+    shellComponent: RootShell,
+    component: RootComponent,
+    notFoundComponent: NotFoundComponent,
+    errorComponent: ErrorComponent,
+  });
 
 function RootShell({ children }: { children: React.ReactNode }) {
   return (
@@ -103,6 +230,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
+
       <body>
         {children}
         <Scripts />
