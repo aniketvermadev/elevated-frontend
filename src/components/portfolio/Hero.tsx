@@ -9,7 +9,7 @@ const stack = [
 
 export function Hero() {
   return (
-    <section id="home" className="relative pt-32 pb-24 overflow-hidden">
+    <section id="home" className="relative pt-32 pb-5 overflow-hidden">
       <div className="absolute inset-0 grid-bg pointer-events-none" />
       <div className="absolute -top-32 -left-32 size-[480px] rounded-full bg-primary/30 blur-[120px]" />
       <div className="absolute top-20 -right-32 size-[420px] rounded-full bg-accent/30 blur-[120px]" />
@@ -35,8 +35,9 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="mt-6 text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05]"
           >
-            Frontend Developer{" "}
-            <span className="text-gradient">crafting modern</span> web experiences
+            Frontend Developer{" "} <br />
+            <span className="text-gradient">crafting modern</span> <br />
+            web experiences
           </motion.h1>
 
           <motion.p
@@ -64,19 +65,20 @@ export function Hero() {
               <ArrowRight className="size-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
-              href="#"
+              href="/Aniket_Verma_Resume.pdf"
+              download
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass hover:border-primary/50 transition"
             >
               <Download className="size-4" />
               Download Resume
             </a>
-            <a
+            {/* <a
               href="#"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full glass hover:border-primary/50 transition"
             >
               <Github className="size-4" />
               GitHub
-            </a>
+            </a> */}
           </motion.div>
 
           <div className="mt-10 relative overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_15%,black_85%,transparent)]">

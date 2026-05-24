@@ -16,7 +16,7 @@ const projects = [
 
 export function Projects() {
   return (
-    <section id="projects" className="py-28 relative">
+    <section id="projects" className="pt-28 pb-5 relative">
       <div className="container mx-auto px-6">
         <SectionHeader
           eyebrow="Featured Work"

@@ -24,7 +24,7 @@ export function Testimonials() {
   const [i, setI] = useState(0);
   const t = items[i];
   return (
-    <section className="py-28 relative">
+    <section className="pt-28 pb-5 relative">
       <div className="container mx-auto px-6">
         <SectionHeader
           eyebrow="Testimonials"

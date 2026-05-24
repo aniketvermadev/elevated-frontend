@@ -10,7 +10,7 @@ const points = [
 
 export function About() {
   return (
-    <section id="about" className="py-28 relative">
+    <section id="about" className="pt-28 pb-5 relative">
       <div className="container mx-auto px-6">
         <SectionHeader
           eyebrow="About"

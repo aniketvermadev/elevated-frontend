@@ -33,8 +33,8 @@ function Index() {
         <Skills />
         <Experience />
         <Projects />
-        <GitHubSection />
-        <Testimonials />
+        {/* <GitHubSection />
+        <Testimonials /> */}
         <Contact />
       </main>
       <Footer />

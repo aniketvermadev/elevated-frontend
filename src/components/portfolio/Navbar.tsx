@@ -6,8 +6,7 @@ const links = [
   { id: "skills", label: "Skills" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
-  { id: "github", label: "GitHub" },
-  { id: "contact", label: "Contact" },
+  // { id: "github", label: "GitHub" },
 ];
 
 export function Navbar() {
@@ -65,7 +64,7 @@ export function Navbar() {
           href="#contact"
           className="hidden sm:inline-flex items-center text-sm font-medium px-4 py-1.5 rounded-full bg-gradient-primary text-primary-foreground hover:opacity-90 transition"
         >
-          Hire me
+          Contact
         </a>
       </nav>
     </header>

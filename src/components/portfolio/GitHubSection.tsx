@@ -25,7 +25,7 @@ const colors = [
 
 export function GitHubSection() {
   return (
-    <section id="github" className="py-28 relative">
+    <section id="github" className="pt-28 pb-5 relative">
       <div className="container mx-auto px-6">
         <SectionHeader
           eyebrow="Open Source"

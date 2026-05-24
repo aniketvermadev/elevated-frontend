@@ -11,10 +11,29 @@ export function Footer() {
           © {new Date().getFullYear()} Devfolio. Crafted with care.
         </div>
         <div className="flex items-center gap-2">
-          {[Github, Linkedin, Twitter, Mail].map((Icon, i) => (
+          {[
+            // {
+            //   icon: Github,
+            //   href: "https://github.com/aniketvermadev",
+            // },
+            {
+              icon: Linkedin,
+              href: "https://www.linkedin.com/in/aniket-verma-337180217/",
+            },
+            {
+              icon: Twitter,
+              href: "https://x.com/AniketV64738395",
+            },
+            {
+              icon: Mail,
+              href: "mailto:aniketverma4229@gmail.com",
+            },
+          ].map(({ icon: Icon, href }, i) => (
             <a
               key={i}
-              href="#"
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="size-10 grid place-items-center rounded-full glass hover:border-primary/50 hover:text-primary transition"
             >
               <Icon className="size-4" />

@@ -2,40 +2,42 @@ import { Reveal, SectionHeader } from "./Section";
 
 const timeline = [
   {
-    period: "2023 — Present",
+    period: "2025 — Present",
     role: "Senior Frontend Developer",
-    company: "Independent / Remote",
+    company: "Seraphic Infosolutions",
     points: [
-      "Led frontend for SaaS dashboards used by 50K+ users",
-      "Built design system shared across 4 product teams",
-      "Cut LCP by 43% via code-splitting & edge caching",
+      "Developed scalable and reusable UI components using React & Next.js",
+      "Improved website performance and reduced LCP by 43% using code-splitting and optimization techniques",
+      "Built and maintained responsive, pixel-perfect user interfaces for enterprise applications",
+      "Collaborated closely with backend and design teams for smooth product delivery",
     ],
   },
   {
-    period: "2022 — 2023",
+    period: "2023 — 2025",
     role: "Frontend Developer",
-    company: "Product Studio",
+    company: "Weboapp Discovery Private Limited",
     points: [
-      "Shipped 12+ Next.js marketing & app surfaces",
-      "Owned REST API integrations and auth flows",
-      "Mentored 2 junior devs on React patterns",
+      "Built responsive and interactive web applications using React.js",
+      "Handled REST API integrations, authentication flows, and state management",
+      "Worked on reusable component architecture to improve development speed",
+      "Mentored junior developers on React best practices and clean code structure",
     ],
   },
   {
-    period: "2021 — 2022",
+    period: "2021 — 2023",
     role: "Frontend Developer",
-    company: "Agency",
+    company: "Logicease Tecno Solutions, Ambala, Haryana",
     points: [
-      "Built responsive e-commerce experiences",
-      "Collaborated with design on motion & UX",
-      "Migrated legacy jQuery sites to React",
+      "Developed responsive e-commerce and business websites",
+      "Collaborated with UI/UX designers to create modern user experiences",
+      "Optimized frontend performance and improved cross-browser compatibility",
     ],
   },
 ];
 
 export function Experience() {
   return (
-    <section id="experience" className="py-28 relative">
+    <section id="experience" className="pt-28 pb-5 relative">
       <div className="container mx-auto px-6">
         <SectionHeader
           eyebrow="Experience"

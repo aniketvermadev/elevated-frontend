@@ -26,14 +26,13 @@ const groups = [
       { name: "GitHub", level: 95 },
       { name: "Git", level: 95 },
       { name: "VS Code", level: 98 },
-      { name: "Figma", level: 85 },
     ],
   },
 ];
 
 export function Skills() {
   return (
-    <section id="skills" className="py-28 relative">
+    <section id="skills" className="pt-28 pb-5 relative">
       <div className="container mx-auto px-6">
         <SectionHeader
           eyebrow="Skills"
