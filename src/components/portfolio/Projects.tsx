@@ -1,17 +1,17 @@
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Reveal, SectionHeader } from "./Section";
-import saas from "@/assets/project-saas.jpg";
-import ai from "@/assets/project-ai.jpg";
-import ecom from "@/assets/project-ecom.jpg";
-import admin from "@/assets/project-admin.jpg";
-import portfolio from "@/assets/project-portfolio.jpg";
+import skor from "@/assets/project-skor.webp";
+import champsbase from "@/assets/project-champsbase.webp";
+import crazyScale from "@/assets/project-crazyscale.webp";
+import rrg from "@/assets/project-rrg.webp";
+import kenzari from "@/assets/project-kenzari.webp";
 
 const projects = [
-  { title: "SaaS Analytics Dashboard", desc: "Real-time analytics with charts, filters, and team workspaces.", img: saas, stack: ["Next.js", "TypeScript", "Tailwind", "REST API"], featured: true },
-  { title: "AI Platform Landing", desc: "High-converting marketing site with motion-rich storytelling.", img: ai, stack: ["Next.js", "Framer Motion", "GSAP"] },
-  { title: "E-commerce Storefront", desc: "Headless commerce with cart, checkout & Stripe integration.", img: ecom, stack: ["React", "TypeScript", "SCSS"] },
-  { title: "Admin Dashboard", desc: "Role-based admin with data tables and live charts.", img: admin, stack: ["React", "Tailwind", "REST API"] },
-  { title: "Portfolio Website", desc: "Award-winning portfolio with cinematic interactions.", img: portfolio, stack: ["Next.js", "Tailwind", "Framer Motion"] },
+  { title: "Skor", desc: "Fintech-powered rental platform with tenant verification, trust scoring, and property management tools.", img: skor, stack: ["React.js", "Bootstrap", "REST API"], featured: true, projectUrl: "https://app.skortorent.com/" },
+  { title: "Champsbase", desc: "Online iGaming platform providing trusted casino and sports betting reviews, comparisons, and expert guides.", img: champsbase, stack: ["Next.js", "TypeScript", "Tailwind"], projectUrl: "https://champsbase.com/" },
+  { title: "Crazy Scale", desc: "Product and AI studio transforming ideas into scalable, production-ready platforms.", img: crazyScale, stack: ["Next.js", "TypeScript", "SCSS"] },
+  { title: "RRG Deals", desc: "Travel and booking platform for discovering, planning, and booking experiences in Red River Gorge.", img: rrg, stack: ["Next.js", "Tailwind", "GSAP", "REST API"] },
+  { title: "Kenzari", desc: "Luxury e-commerce ecosystem for jewellery sales, customer engagement, and business operations.", img: kenzari, stack: ["Next.js", "Tailwind", "REST API"] },
 ];
 
 export function Projects() {
@@ -54,11 +54,8 @@ export function Projects() {
                     ))}
                   </div>
                   <div className="mt-5 flex gap-2">
-                    <a href="#" className="inline-flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-full bg-gradient-primary text-primary-foreground hover:opacity-90 transition">
+                    <a href={p.projectUrl ?? ""} target="_blank" className="inline-flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-full bg-gradient-primary text-primary-foreground hover:opacity-90 transition">
                       <ExternalLink className="size-3.5" /> Live
-                    </a>
-                    <a href="#" className="inline-flex items-center gap-1.5 text-sm px-3 py-1.5 rounded-full glass hover:border-primary/50 transition">
-                      <Github className="size-3.5" /> Code
                     </a>
                   </div>
                 </div>

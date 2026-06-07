@@ -16,7 +16,7 @@ export const Route = createFileRoute("/")({
     meta: [
       // Basic SEO
       {
-        title: "Devfolio — Senior Frontend Developer Portfolio",
+        title: "Aniket Verma — Senior Frontend Developer Portfolio",
       },
       {
         name: "description",
@@ -36,7 +36,7 @@ export const Route = createFileRoute("/")({
       // Open Graph / Facebook
       {
         property: "og:title",
-        content: "Devfolio — Senior Frontend Developer Portfolio",
+        content: "Aniket Verma — Senior Frontend Developer Portfolio",
       },
       {
         property: "og:description",
@@ -64,7 +64,7 @@ export const Route = createFileRoute("/")({
       },
       {
         name: "twitter:title",
-        content: "Devfolio — Senior Frontend Developer Portfolio",
+        content: "Aniket Verma — Senior Frontend Developer Portfolio",
       },
       {
         name: "twitter:description",

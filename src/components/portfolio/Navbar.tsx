@@ -39,7 +39,7 @@ export function Navbar() {
           <span className="size-7 rounded-lg bg-gradient-primary shadow-glow animate-pulse-glow grid place-items-center text-xs">
             {"</>"}
           </span>
-          <span className="hidden sm:inline">Devfolio</span>
+          <span className="hidden sm:inline">Aniket Verma</span>
         </a>
         <ul className="hidden md:flex items-center gap-1 text-sm">
           {links.map((l) => (

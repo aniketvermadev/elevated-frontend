@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Github, Sparkles } from "lucide-react";
-import avatar from "@/assets/avatar.jpg";
+import { ArrowRight, Download, Sparkles } from "lucide-react";
+import avatar from "@/assets/aniket.webp";
 
 const stack = [
   "React", "Next.js", "TypeScript", "Tailwind", "JavaScript",
@@ -9,7 +9,7 @@ const stack = [
 
 export function Hero() {
   return (
-    <section id="home" className="relative pt-32 pb-5 overflow-hidden">
+    <section id="home" className="relative pt-32 pb-5 overflow-hidden max-w-screen">
       <div className="absolute inset-0 grid-bg pointer-events-none" />
       <div className="absolute -top-32 -left-32 size-[480px] rounded-full bg-primary/30 blur-[120px]" />
       <div className="absolute top-20 -right-32 size-[420px] rounded-full bg-accent/30 blur-[120px]" />
@@ -80,19 +80,6 @@ export function Hero() {
               GitHub
             </a> */}
           </motion.div>
-
-          <div className="mt-10 relative overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_15%,black_85%,transparent)]">
-            <div className="flex gap-3 w-max animate-marquee">
-              {[...stack, ...stack].map((s, i) => (
-                <span
-                  key={i}
-                  className="px-4 py-2 rounded-full glass text-xs font-mono text-muted-foreground whitespace-nowrap"
-                >
-                  {s}
-                </span>
-              ))}
-            </div>
-          </div>
         </div>
 
         <motion.div
@@ -102,7 +89,7 @@ export function Hero() {
           className="relative mx-auto"
         >
           <div className="absolute inset-0 -m-8 rounded-full bg-gradient-primary blur-3xl opacity-40 animate-pulse-glow" />
-          <div className="relative size-[300px] sm:size-[380px] rounded-[2rem] overflow-hidden glass-strong animate-float">
+          <div className="relative w-[300px] h-[300px] sm:w-[380px] sm:h-[380px] max-w-full rounded-[2rem] overflow-hidden glass-strong animate-float">
             <img
               src={avatar}
               alt="Developer portrait"
@@ -119,11 +106,23 @@ export function Hero() {
               <div className="text-sm font-semibold">4+ Years</div>
             </div>
           </div>
-          <div className="absolute -top-4 -right-4 glass rounded-2xl px-4 py-3 shadow-glow-accent">
-            <div className="text-xs text-muted-foreground">Projects shipped</div>
-            <div className="text-sm font-semibold">50+</div>
-          </div>
         </motion.div>
+      </div>
+      <div className="container mx-auto">
+        <div className="mt-10 w-full max-w-full overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_15%,black_85%,transparent)]">
+          <div className="flex w-full overflow-hidden">
+            <div className="flex min-w-max gap-3 animate-marquee">
+              {[...stack, ...stack].map((s, i) => (
+                <span
+                  key={i}
+                  className="shrink-0 px-4 py-2 rounded-full glass text-xs font-mono text-muted-foreground whitespace-nowrap"
+                >
+                  {s}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

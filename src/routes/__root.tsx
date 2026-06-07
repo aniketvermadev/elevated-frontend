@@ -93,7 +93,7 @@ export const Route =
         },
 
         {
-          title: "Devfolio — Senior Frontend Developer Portfolio",
+          title: "Aniket Verma — Senior Frontend Developer Portfolio",
         },
 
         {
@@ -121,7 +121,7 @@ export const Route =
         // Open Graph / Facebook
         {
           property: "og:title",
-          content: "Devfolio — Senior Frontend Developer Portfolio",
+          content: "Aniket Verma — Senior Frontend Developer Portfolio",
         },
 
         {
@@ -155,7 +155,7 @@ export const Route =
 
         {
           name: "twitter:title",
-          content: "Devfolio — Senior Frontend Developer Portfolio",
+          content: "Aniket Verma — Senior Frontend Developer Portfolio",
         },
 
         {
