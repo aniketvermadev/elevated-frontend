@@ -9,7 +9,7 @@ const groups = [
       { name: "JavaScript", level: 95 },
       { name: "TypeScript", level: 92 },
       { name: "React", level: 96 },
-      { name: "Next.js", level: 92 },
+      { name: "Next.js", level: 85 },
     ],
   },
   {
@@ -53,9 +53,9 @@ export function Skills() {
                     <li key={s.name}>
                       <div className="flex justify-between text-sm mb-1.5">
                         <span>{s.name}</span>
-                        <span className="text-muted-foreground font-mono text-xs">
+                        {/* <span className="text-muted-foreground font-mono text-xs">
                           {s.level}%
-                        </span>
+                        </span> */}
                       </div>
                       <div className="h-1.5 rounded-full bg-muted overflow-hidden">
                         <div

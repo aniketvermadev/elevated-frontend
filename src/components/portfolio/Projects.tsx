@@ -7,7 +7,7 @@ import rrg from "@/assets/project-rrg.webp";
 import kenzari from "@/assets/project-kenzari.webp";
 
 const projects = [
-  { title: "Skor", desc: "Fintech-powered rental platform with tenant verification, trust scoring, and property management tools.", img: skor, stack: ["React.js", "Bootstrap", "REST API"], featured: true, projectUrl: "https://app.skortorent.com/" },
+  { title: "Skor", desc: "SKOR is rental platform with tenant verification, trust scoring, and property management tools.", img: skor, stack: ["React.js", "Bootstrap", "REST API"], featured: true, projectUrl: "https://app.skortorent.com/" },
   { title: "Champsbase", desc: "Online iGaming platform providing trusted casino and sports betting reviews, comparisons, and expert guides.", img: champsbase, stack: ["Next.js", "TypeScript", "Tailwind"], projectUrl: "https://champsbase.com/" },
   { title: "Crazy Scale", desc: "Product and AI studio transforming ideas into scalable, production-ready platforms.", img: crazyScale, stack: ["Next.js", "TypeScript", "SCSS"] },
   { title: "RRG Deals", desc: "Travel and booking platform for discovering, planning, and booking experiences in Red River Gorge.", img: rrg, stack: ["Next.js", "Tailwind", "GSAP", "REST API"] },
