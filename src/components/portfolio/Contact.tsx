@@ -124,6 +124,7 @@ export function Contact() {
                   name="name"
                   placeholder="Jane Doe"
                   required
+                  autoComplete="name"
                   value={formData.name}
                   onChange={handleChange}
                 />
@@ -134,6 +135,7 @@ export function Contact() {
                   type="email"
                   placeholder="jane@company.com"
                   required
+                  autoComplete="email"
                   value={formData.email}
                   onChange={handleChange}
                 />
