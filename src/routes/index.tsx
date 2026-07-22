@@ -10,6 +10,7 @@ import { Testimonials } from "@/components/portfolio/Testimonials";
 import { Contact } from "@/components/portfolio/Contact";
 import { Footer } from "@/components/portfolio/Footer";
 import { Toaster } from "@/components/ui/sonner";
+import { ChatWidget } from "@/components/ui/chat-widget/ChatWidget";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -113,6 +114,7 @@ function Index() {
       </main>
       <Footer />
       <Toaster />
+      <ChatWidget />
     </div>
   );
 }
