@@ -1,20 +1,28 @@
 import { getEnvVar } from './env.server'
 import type { Conversation } from './types'
 
-
-function adminUrl(conversationId: string) {
-  const base = getEnvVar('SITE_URL') ?? ''
+async function adminUrl(conversationId: string) {
+  const base = (await getEnvVar('SITE_URL')) ?? ''
   return `${base}/admin/chat?conversation=${conversationId}`
 }
 
 export async function notifyEscalation(conversation: Conversation, latestMessage: string) {
-
-  const link = adminUrl(conversation.id)
+  const link = await adminUrl(conversation.id)
   const text = `New chat needs you.\n\n"${latestMessage}"\n\nReply here: ${link}`
 
-  const webhookUrl = getEnvVar('NOTIFY_WEBHOOK_URL')
-  const resendKey = getEnvVar('RESEND_API_KEY')
-  const emailTo = getEnvVar('NOTIFY_EMAIL_TO')
+  const [webhookUrl, resendKey, emailTo, emailFrom] = await Promise.all([
+    getEnvVar('NOTIFY_WEBHOOK_URL'),
+    getEnvVar('RESEND_API_KEY'),
+    getEnvVar('NOTIFY_EMAIL_TO'),
+    getEnvVar('NOTIFY_EMAIL_FROM'),
+  ])
+
+  // TEMPORARY DEBUG — remove once notifications are confirmed working.
+  console.log('[chat debug] env check:', {
+    hasWebhookUrl: !!webhookUrl,
+    hasResendKey: !!resendKey,
+    hasEmailTo: !!emailTo,
+  })
 
   const tasks: Promise<unknown>[] = []
 
@@ -41,7 +49,7 @@ export async function notifyEscalation(conversation: Conversation, latestMessage
           'content-type': 'application/json',
         },
         body: JSON.stringify({
-          from: getEnvVar('NOTIFY_EMAIL_FROM') ?? 'Portfolio Chat <onboarding@resend.dev>',
+          from: emailFrom ?? 'Portfolio Chat <onboarding@resend.dev>',
           to: [emailTo],
           subject: 'New portfolio chat needs a reply',
           text,

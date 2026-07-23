@@ -12,10 +12,10 @@ import {
   setVisitorContact,
 } from './store.server'
 
-function requireAdmin(secret: string) {
-  const expected = getEnvVar('ADMIN_SECRET')
+async function requireAdmin(secret: string) {
+  const expected = await getEnvVar('ADMIN_SECRET')
   if (!expected) {
-    throw new Error('ADMIN_SECRET is not set on the server — check your .dev.vars / env vars.')
+    throw new Error('ADMIN_SECRET is not set on the server — check your env vars.')
   }
   if (secret !== expected) {
     throw new Error('Incorrect passcode.')
@@ -87,14 +87,14 @@ export const leaveContact = createServerFn({ method: 'POST' })
 export const adminListConversations = createServerFn({ method: 'POST' })
   .inputValidator((data: { secret: string }) => data)
   .handler(async ({ data }) => {
-    requireAdmin(data.secret)
+    await requireAdmin(data.secret)
     return listConversations()
   })
 
 export const adminReply = createServerFn({ method: 'POST' })
   .inputValidator((data: { secret: string; conversationId: string; message: string }) => data)
   .handler(async ({ data }) => {
-    requireAdmin(data.secret)
+    await requireAdmin(data.secret)
     addMessage(data.conversationId, 'human', data.message)
     setStatus(data.conversationId, 'escalated')
     return { ok: true }
@@ -103,7 +103,7 @@ export const adminReply = createServerFn({ method: 'POST' })
 export const adminResolve = createServerFn({ method: 'POST' })
   .inputValidator((data: { secret: string; conversationId: string }) => data)
   .handler(async ({ data }) => {
-    requireAdmin(data.secret)
+    await requireAdmin(data.secret)
     setStatus(data.conversationId, 'resolved')
     return { ok: true }
   })
