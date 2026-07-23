@@ -10,7 +10,7 @@ import {
 import type { ChatMessage, ConversationStatus } from '@/lib/chat/types'
 
 const STORAGE_KEY = 'portfolio-chat-conversation-id'
-const POLL_INTERVAL_MS = 3000 
+const POLL_INTERVAL_MS = 3000
 
 export function ChatWidget() {
   const [open, setOpen] = useState(false)
@@ -22,10 +22,6 @@ export function ChatWidget() {
   const scrollRef = useRef<HTMLDivElement>(null)
   const lastMessageId = useRef<string | undefined>(undefined)
 
-  // Bootstrap: reuse an existing conversation from this browser, or start one.
-  // If the stored id no longer exists server-side (e.g. dev server restarted,
-  // since the store is in-memory), fall back to starting a fresh one instead
-  // of silently failing on the next send.
   useEffect(() => {
     if (!open || conversationId) return
     const existing = localStorage.getItem(STORAGE_KEY)
@@ -89,6 +85,8 @@ export function ChatWidget() {
   useEffect(() => {
     scrollRef.current?.scrollTo({ top: scrollRef.current.scrollHeight, behavior: 'smooth' })
   }, [messages])
+
+  const hasHumanReplied = messages.some((m) => m.role === 'human')
 
   async function handleSend() {
     const text = input.trim()
@@ -155,7 +153,11 @@ export function ChatWidget() {
               <div>
                 <p className="text-sm font-medium text-foreground">Ask about Aniket</p>
                 <p className="text-xs text-muted-foreground">
-                  {status === 'escalated' ? "Aniket's been notified" : 'Usually replies instantly'}
+                  {hasHumanReplied
+                    ? 'Chatting with Aniket'
+                    : status === 'escalated'
+                      ? "Aniket's been notified"
+                      : 'Usually replies instantly'}
                 </p>
               </div>
               <button
@@ -171,7 +173,7 @@ export function ChatWidget() {
               {messages.map((m) => (
                 <ChatBubble key={m.id} message={m} />
               ))}
-              {status === 'escalated' && (
+              {status === 'escalated' && !hasHumanReplied && (
                 <p className="pt-1 text-center text-xs text-muted-foreground">
                   Waiting for Aniket to reply — feel free to leave the tab open.
                 </p>
@@ -244,8 +246,6 @@ function ChatBubble({ message }: { message: ChatMessage }) {
   )
 }
 
-// Optional: call this from a "leave your contact" prompt if a visitor wants
-// a fallback path when they can't wait for a live reply.
 export async function submitContact(conversationId: string, contact: string) {
   await leaveContact({ data: { conversationId, contact } })
 }

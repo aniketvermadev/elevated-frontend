@@ -114,7 +114,7 @@ function Index() {
       </main>
       <Footer />
       <Toaster />
-      {/* <ChatWidget /> */}
+      <ChatWidget />
     </div>
   );
 }
