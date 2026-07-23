@@ -10,7 +10,7 @@ import {
 import type { ChatMessage, ConversationStatus } from '@/lib/chat/types'
 
 const STORAGE_KEY = 'portfolio-chat-conversation-id'
-const POLL_INTERVAL_MS = 3000
+const POLL_INTERVAL_MS = 3000 
 
 export function ChatWidget() {
   const [open, setOpen] = useState(false)
