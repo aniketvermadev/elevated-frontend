@@ -113,7 +113,7 @@ export function ChatWidget() {
       // shown via the optimistic bubble above, so re-adding it would duplicate it.
       const newOnes = fresh.messages.filter((m) => m.role !== 'visitor')
       setMessages((prev) => [...prev, ...newOnes])
-      if (fresh.messages.length > 0) {
+      if (fresh.messages.length > 0) { 
         lastMessageId.current = fresh.messages[fresh.messages.length - 1].id
       }
       setStatus(fresh.status)
